@@ -1,0 +1,29 @@
+{
+  "name": "diary-server-api",
+  "version": "1.0.0",
+  "description": "Server for the Diary App - API",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -S --ui bdd --require ./tests/spec_helper.js --recursive ./tests --reporter spec",
+    "start": "node index.js"
+  },
+  "author": "Leonardo Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mocha": "^3.4.2",
+    "mongoose": "^4.11.0",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0",
+    "should": "^11.2.1",
+    "socket.io": "^2.0.3",
+    "supertest": "^3.0.0"
+  }
+}
