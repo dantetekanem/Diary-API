@@ -1,7 +1,8 @@
 import axios from "axios";
 import { browserHistory } from "react-router";
 import { Cookies } from "react-cookie";
-import { AUTH_USER, AUTH_ERROR, UNAUTH_USER, PROTECTED_TEST, STARTING_REQUEST, FINISHED_REQUEST, REQUEST_ERROR } from "./types";
+import { errorHandler } from "./index";
+import { AUTH_USER, AUTH_ERROR, UNAUTH_USER, PROTECTED_TEST } from "./types";
 import config from "../config/main";
 let cookie = new Cookies();
 
@@ -15,7 +16,7 @@ export function loginUser({email, password}) {
       window.location.href = config.CLIENT_ROOT_URL + "/dashboard";
     })
     .catch((error) => {
-      errorHandler(dispatch, error.response, AUTH_ERROR);
+      errorHandler(dispatch, error, AUTH_ERROR);
     })
   }
 }
@@ -30,7 +31,7 @@ export function registerUser({email, firstName, lastName, password}) {
       window.location.href = config.CLIENT_ROOT_URL + "/dashboard";
     })
     .catch((error) => {
-      errorHandler(dispatch, error.response, AUTH_ERROR);
+      errorHandler(dispatch, error, AUTH_ERROR);
     })
   }
 }
@@ -56,7 +57,7 @@ export function protectedTest() {
       })
     })
     .catch((error) => {
-      errorHandler(dispatch, error.response, AUTH_ERROR);
+      errorHandler(dispatch, error, AUTH_ERROR);
     })
   }
 }

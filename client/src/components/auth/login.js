@@ -3,14 +3,17 @@ import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 import { Link } from "react-router";
 import { loginUser } from "../../actions/auth";
+import validate from "./validations/validate-login";
+import { renderField } from "../../helpers/form-helper";
 
 const form = reduxForm({
-  form: "login"
+  form: "login",
+  validate
 });
 
 class Login extends Component {
   handleFormSubmit(formProps) {
-    return this.props.loginUser(formProps);
+    this.props.loginUser(formProps);
   }
 
   renderAlert() {
@@ -27,20 +30,19 @@ class Login extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <div>
-        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          {this.renderAlert()}
-          <div>
-            <label>E-mail</label>
-            <Field name="email" className="form-control" component="input" type="text" />
+      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        {this.renderAlert()}
+        <div className="row">
+          <div className="col-md-6">
+            <Field name="email" label="E-mail" className="form-control" component={renderField} type="text" />
           </div>
-          <div>
-            <label>Password</label>
-            <Field name="password" className="form-control" component="input" type="password" />
+          <div className="col-md-6">
+            <Field name="password" label="Password" className="form-control" component={renderField} type="password" />
           </div>
-          <button type="submit" className="btn btn-primary">Login</button>
-        </form>
-      </div>
+        </div>
+        <br />
+        <button type="submit" className="btn btn-primary">Login</button>
+      </form>
     );
   }
 }

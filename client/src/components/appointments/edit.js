@@ -1,33 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm, formValueSelector } from "redux-form";
-import DatePicker from "react-datepicker";
 import * as actions from "../../actions/appointments";
 import validate from "./validations/form";
-import moment from "moment";
+import { renderField, renderDatePicker } from "../../helpers/form-helper";
 import { Link } from "react-router";
 
 const form = reduxForm({
   form: "editAppointment",
   validate,
 })
-
-const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input className="form-control" {...input} placeholder={label} type={type}/>
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
-  </div>
-);
-
-const renderDatePicker = ({input, placeholder, defaultValue, meta: {touched, error} }) => (
-  <div>
-    <DatePicker {...input} dateForm="MM/DD/YYYY" selected={input.value ? moment(input.value) : null} />
-    {touched && error && <span>{error}</span>}
-  </div>
-);
 
 class EditAppointment extends Component {
   constructor (props) {
