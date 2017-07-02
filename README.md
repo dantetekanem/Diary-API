@@ -1,4 +1,4 @@
-This application requires MongoDB to works.
+This application requires MongoDB, NPM and Node.JS to works (all of them in the last stable version).
 
 ## Client
 
