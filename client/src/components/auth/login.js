@@ -41,7 +41,7 @@ class Login extends Component {
           </div>
         </div>
         <br />
-        <button type="submit" className="btn btn-primary">Login</button>
+        <button type="submit" className="btn btn-primary">Login</button> | Not registered yet? <Link to="/register">Create an account</Link>.
       </form>
     );
   }

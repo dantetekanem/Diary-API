@@ -4,6 +4,6 @@ module.exports = {
   "port": process.env.PORT || 3000,
   // test configurations
   test_port: 3001,
-  test_db: "diary-test-db",
+  test_db: "mongodb://localhost:27017/diary-test-db",
   test_env: "test"
 }

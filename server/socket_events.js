@@ -1,7 +1,6 @@
 exports = module.exports = function (io) {
   // Set socket.io listeners.
   io.on('connection', (socket) => {
-    // On agenda entry, join broadcast channel
     socket.on('enter agenda', (user) => {
       socket.join(user);
     });

@@ -10,14 +10,15 @@ import socketEvents from "./socket_events";
 let app = express();
 
 // Connect database
-mongoose.connect(config.database)
 
 // Start the server
 let server;
 if (process.env.NODE_ENV != config.test_env) {
+  mongoose.connect(config.database)
   server = app.listen(config.port);
   console.log(`Your server is running on port ${config.port}.`);
 } else{
+  mongoose.connect(config.test_db)
   server = app.listen(config.test_port);
 }
 

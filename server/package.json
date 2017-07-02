@@ -4,7 +4,7 @@
   "description": "Server for the Diary App - API",
   "main": "app.js",
   "scripts": {
-    "test": "mocha -S --ui bdd --require ./tests/spec_helper.js --recursive ./tests --reporter spec",
+    "test": "mocha -S --ui bdd --require ./tests/spec_helper.js --require ./tests/authed_agent_helper.js --recursive ./tests --reporter spec",
     "start": "node index.js"
   },
   "author": "Leonardo Pereira",
@@ -22,6 +22,7 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "passport-local": "^1.0.0",
+    "q": "^1.5.0",
     "should": "^11.2.1",
     "socket.io": "^2.0.3",
     "supertest": "^3.0.0"

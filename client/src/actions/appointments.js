@@ -26,7 +26,7 @@ export function fetchAppointment(appointment) {
 }
 
 export function createAppointment(params) {
-  const url = "/appointments/create";
+  const url = "/appointments";
   return (dispatch) => {
     postData(NEW_APPOINTMENT, APPOINTMENT_ERROR, true, url, dispatch, params);
 
@@ -36,19 +36,16 @@ export function createAppointment(params) {
 }
 
 export function updateAppointment(appointment, params) {
-  const url = `/appointments/update/${appointment}`;
+  const url = `/appointments/${appointment}`;
   return (dispatch) => {
     putData(EDIT_APPOINTMENT, APPOINTMENT_ERROR, true, url, dispatch, params);
   }
 }
 
 export function deleteAppointment(appointment) {
-  const url = `/appointments/delete/${appointment}`;
+  const url = `/appointments/${appointment}`;
   return (dispatch) => {
     deleteData(DELETE_APPOINTMENT, APPOINTMENT_ERROR, true, url, dispatch);
-
-    // Clear form message
-    dispatch(reset('newAppointment'));
   }
 }
 

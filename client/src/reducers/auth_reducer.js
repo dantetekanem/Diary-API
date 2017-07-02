@@ -8,7 +8,8 @@ export default function(state = INITIAL_STATE, action) {
     case UNAUTH_USER:
       return {...state, authenticated: false};
     case AUTH_ERROR:
-      return {...state, error: action.payload};
+      window.location.href = "/login";
+      return {...state, error: action.payload, authenticated: false};
     case PROTECTED_TEST:
       return {...state, content: action.payload};
   }

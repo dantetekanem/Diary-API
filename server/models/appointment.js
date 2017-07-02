@@ -1,7 +1,12 @@
+// Appointment Model
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-var appointmentSchema = new mongoose.Schema({
+// =============================
+// Schema for: Appointment.js
+// =============================
+
+var AppointmentSchema = new mongoose.Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: "User"
@@ -29,4 +34,4 @@ var appointmentSchema = new mongoose.Schema({
   }
 }, {timestamps: true});
 
-export default mongoose.model('Appointment', appointmentSchema);
+export default mongoose.model('Appointment', AppointmentSchema);

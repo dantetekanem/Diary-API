@@ -105,6 +105,6 @@ exports.deleteAppointment = function(req, res, next) {
       return next(err);
     }
 
-    return res.status(200).json({message: "Appoiment deleted.", id: appointment._id});
+    return res.status(200).json({message: "Appointment deleted.", id: appointment._id});
   });
 }

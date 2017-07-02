@@ -41,11 +41,11 @@ module.exports = function(app) {
   // fetch single
   appointmentRoutes.get("/:appointmentId", requireAuth, AppointmentController.getAppointment);
   // create
-  appointmentRoutes.post("/create", requireAuth, AppointmentController.createAppointment);
+  appointmentRoutes.post("/", requireAuth, AppointmentController.createAppointment);
   // update
-  appointmentRoutes.put("/update/:appointmentId", requireAuth, AppointmentController.updateAppointment);
+  appointmentRoutes.put("/:appointmentId", requireAuth, AppointmentController.updateAppointment);
   // delete
-  appointmentRoutes.delete("/delete/:appointmentId", requireAuth, AppointmentController.deleteAppointment);
+  appointmentRoutes.delete("/:appointmentId", requireAuth, AppointmentController.deleteAppointment);
 
   // URL for API group routes
   app.use("/api", apiRoutes)
