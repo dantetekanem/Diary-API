@@ -7,7 +7,6 @@ export const  AUTH_USER = "auth_user",
               PROTECTED_TEST = "protected_test";
 
 // Appointments Types
-
 export const  APPOINTMENT_ERROR = "appointment_error",
               FETCH_APPOINTMENTS = "fetch_appointments",
               NEW_APPOINTMENT = "new_appointment",

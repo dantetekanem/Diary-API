@@ -11,10 +11,6 @@ const user = cookie.get("user");
 // Connect to socket.io server
 export const socket = io.connect(SOCKET_URL);
 
-//= ===============================
-// Appointment actions
-//= ===============================
-
 export function fetchAppointments() {
   const url = "/appointments";
   return dispatch => getData(FETCH_APPOINTMENTS, APPOINTMENT_ERROR, true, url, dispatch);

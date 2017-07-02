@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { connect } from "react-redux";
 import * as actions from "../../actions/appointments";
 import { Cookies } from "react-cookie";
-
 import AppointmentList from "./appointment-list";
 
 const socket = actions.socket;
@@ -15,12 +14,9 @@ class Appointment extends Component {
     super(props);
 
     const { params, fetchAppointments } = this.props;
-
-    // Fetch appointments (to/from user)
     fetchAppointments();
     socket.emit("enter agenda", user._id);
 
-    // Listen for updates from socket server
     socket.on("refresh appointments", (data) => {
       fetchAppointments();
     })

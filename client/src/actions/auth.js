@@ -4,7 +4,7 @@ import { Cookies } from "react-cookie";
 import { errorHandler } from "./index";
 import { AUTH_USER, AUTH_ERROR, UNAUTH_USER, PROTECTED_TEST } from "./types";
 import config from "../config/main";
-let cookie = new Cookies();
+const cookie = new Cookies();
 
 export function loginUser({email, password}) {
   return function(dispatch) {

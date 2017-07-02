@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+import AppointmentItem from "./appointment-item";
 import { Cookies } from "react-cookie";
 const cookie = new Cookies();
-
-import AppointmentItem from "./appointment-item";
 
 class AppointmentList extends Component {
   render() {
