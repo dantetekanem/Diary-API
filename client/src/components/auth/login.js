@@ -20,7 +20,7 @@ class Login extends Component {
     if (this.props.errorMessage) {
       return (
         <div>
-          <span><strong>Error!</strong> {this.props.errorMessage}</span>
+          <span><strong>Error!</strong> Try again. User/Password not found or not matching.</span>
         </div>
       );
     }

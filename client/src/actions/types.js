@@ -1,5 +1,6 @@
 // Auth Types
 export const  AUTH_USER = "auth_user",
+              FAILED_AUTH = "failed_auth",
               UNAUTH_USER = "unauth_user",
               AUTH_ERROR = "auth_error",
               FORGOT_PASSWORD_REQUEST = "forgot_password_request",
