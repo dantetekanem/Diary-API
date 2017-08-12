@@ -5,7 +5,7 @@ This application requires MongoDB, NPM and Node.JS to works (all of them in the 
 ### Installation
 `cd client/ && npm install`
 ### Run
-`cd client/ && npm start`
+`npm start`
 ### Configurations path
 `config/main.js`
 
@@ -14,7 +14,7 @@ This application requires MongoDB, NPM and Node.JS to works (all of them in the 
 ### Installation
 `cd server/ && npm install`
 ### Run
-`cd client/ && npm start`
+`npm start`
 ### Configurations path
 `config/main.js`
 
